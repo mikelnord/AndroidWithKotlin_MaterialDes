@@ -1,12 +1,12 @@
 package com.gb.myapplication.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.gb.myapplication.R
 import com.gb.myapplication.databinding.MainFragmentBinding
 
@@ -23,6 +23,7 @@ class MainFragment : Fragment() {
         binding = DataBindingUtil.inflate(
             inflater, R.layout.main_fragment, container, false
         )
+        setHasOptionsMenu(true)
         return binding.root
     }
 
@@ -32,6 +33,15 @@ class MainFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         binding.bottomSheet.viewModel = viewModel
+        binding.bottomSheet.bottomSheetContainer.alpha= 0.7F
 
+    }
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 }
