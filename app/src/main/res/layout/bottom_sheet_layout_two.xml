@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.gb.myapplication.pages.OneViewModel" />
+            type="com.gb.myapplication.pages.TwoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

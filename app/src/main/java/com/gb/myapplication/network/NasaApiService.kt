@@ -21,7 +21,8 @@ private val retrofit = Retrofit.Builder()
 interface NasaApiService {
     @GET("planetary/apod")
     suspend fun requestFotoDay(
-        @Query("api_key") key: String,
+        @Query("date") date: String,
+        @Query("api_key") key: String
     ): NasaProperty
 }
 
