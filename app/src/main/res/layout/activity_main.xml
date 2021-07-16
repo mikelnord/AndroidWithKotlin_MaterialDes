@@ -1,5 +1,6 @@
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/merge"
     app:layoutDescription="@xml/activity_main_scene"
     android:layout_height="match_parent"
@@ -14,5 +15,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/navigation" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/star_big_on"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="699dp" />
+
+    <TextView
+        android:id="@+id/textMarker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_marker"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="699dp" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
